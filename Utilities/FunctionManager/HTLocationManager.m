@@ -45,7 +45,7 @@ static HTLocationManager *_sharedInstance = nil;
     return nil;
 }
 
-+ (id)alloc
++ (instancetype)alloc
 {
     @synchronized([HTLocationManager class])
     {

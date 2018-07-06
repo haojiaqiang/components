@@ -121,7 +121,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     return self;
 }
 
-- (id)initWithView:(UIView *)view {
+- (instancetype)initWithView:(UIView *)view {
     NSAssert(view, @"View must not be nil.");
     return [self initWithFrame:view.bounds];
 }
@@ -818,11 +818,11 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
 #pragma mark - Lifecycle
 
-- (id)init {
+- (instancetype)init {
     return [self initWithFrame:CGRectMake(0.f, 0.f, 37.f, 37.f)];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
@@ -939,11 +939,11 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
 #pragma mark - Lifecycle
 
-- (id)init {
+- (instancetype)init {
     return [self initWithFrame:CGRectMake(.0f, .0f, 120.0f, 20.0f)];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         _progress = 0.f;

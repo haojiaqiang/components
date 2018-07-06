@@ -32,7 +32,7 @@
 
 @property (nonatomic, copy) void (^handleTitleColorChanged)(HTButton *button, UIColor *titleColor);
 
-- (id)initWithFrame:(CGRect)frame andRadius:(CGFloat)radius;
+- (instancetype)initWithFrame:(CGRect)frame andRadius:(CGFloat)radius;
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
 - (UIColor *)backgroundColorForState:(UIControlState)state;
 

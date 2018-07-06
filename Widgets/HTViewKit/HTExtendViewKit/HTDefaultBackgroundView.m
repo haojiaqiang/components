@@ -141,7 +141,7 @@
     CGSize imageSize = _imageView.image.size;
     CGFloat imageViewW = imageSize.width;
     CGFloat imageViewH = imageSize.height;
-    CGFloat padding = ALL_MARGIN;
+    CGFloat padding = kAppAdaptWidth(15);
     CGFloat labelH = kAppAdaptHeight(18);
     CGFloat imageAndLabelsH = imageViewH + labelH * 2;
     CGFloat height = self.height - imageAndLabelsH;
@@ -169,7 +169,7 @@
     CGFloat imageViewH = imageSize.height;
     _imageView.frame = CGRectMake((kDeviceWidth - imageViewW) * 0.5, 0, imageViewW, imageViewH);
     
-    CGFloat padding = ALL_MARGIN;
+    CGFloat padding = kAppAdaptWidth(15);
     CGFloat labelH = kAppAdaptHeight(18);
     _titleLabel.frame = CGRectMake(padding, _imageView.bottom + kAppAdaptHeight(55), (kDeviceWidth - 2 * padding), labelH);
     

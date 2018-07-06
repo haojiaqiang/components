@@ -26,7 +26,7 @@ static HTLogin* _sharedInstance = nil;
     return nil;
 }
 
-+ (id)alloc
++ (instancetype)alloc
 {
     @synchronized([HTLogin class])
     {

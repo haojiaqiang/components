@@ -22,7 +22,7 @@ static HTContactReader *_sharedInstance;
     return nil;
 }
 
-+ (id)alloc
++ (instancetype)alloc
 {
     @synchronized([HTContactReader class])
     {

@@ -16,7 +16,7 @@ extern BOOL isNull(id value)
 
 @implementation JSONValueTransformer
 
--(id)init
+-(instancetype)init
 {
     self = [super init];
     if (self) {

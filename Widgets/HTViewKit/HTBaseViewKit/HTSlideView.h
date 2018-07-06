@@ -75,7 +75,7 @@ typedef NS_ENUM(NSInteger, HTSlideScrollStatus) {
 
 - (Class)pageControlClass;
 
-- (id)initWithFrame:(CGRect)frame andData:(NSArray *)dataArray;
+- (instancetype)initWithFrame:(CGRect)frame andData:(NSArray *)dataArray;
 
 - (void)refreshWithData:(NSArray *)dataArray;
 

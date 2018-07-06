@@ -30,7 +30,7 @@ static HTNetworkManager *_sharedInstance = nil;
     return nil;
 }
 
-+ (id)alloc {
++ (instancetype)alloc {
     @synchronized([HTNetworkManager class]) {
         NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
         _sharedInstance = [super alloc];

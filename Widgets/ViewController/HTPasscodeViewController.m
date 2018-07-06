@@ -8,6 +8,7 @@
 #import "HTLabel.h"
 #import "Constants.h"
 #import "HTAppConstants.h"
+#import "HTColor.h"
 
 @interface HTPasscodeViewController ()
 
@@ -81,7 +82,7 @@ static NSString *BulletCharacter = @"\u25CF";
     _messageLabel.textAlignment = NSTextAlignmentCenter;
     _messageLabel.font = kAppFont(14);
     _messageLabel.text = _message;
-    _messageLabel.textColor = HTAppBaseGrayColor;
+    _messageLabel.textColor = [HTColor grayForTitleText];
     [_contentView addSubview:_messageLabel];
     
 }

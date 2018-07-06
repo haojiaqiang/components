@@ -11,9 +11,9 @@
 
 @property (nonatomic, copy) void (^clickButtonAtIndex)(HTAlertView *alertView, NSInteger buttonIndex);
 
-- (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle;
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle;
 
-- (id)initWithCustomView:(UIView *)view title:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle;
+- (instancetype)initWithCustomView:(UIView *)view title:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle;
 
 - (void)setActionEnabled:(BOOL)enabled atIndex:(NSInteger)buttonIndex;
 

@@ -23,7 +23,7 @@ static HTLanguage* _sharedInstance = nil;
     return nil;
 }
 
-+ (id)alloc
++ (instancetype)alloc
 {
     @synchronized([HTLanguage class])
     {

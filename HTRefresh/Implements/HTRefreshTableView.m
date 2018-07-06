@@ -11,7 +11,7 @@
     HTRefreshType _refreshType;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         _refreshType = HTRefreshTypeTop|HTRefreshTypeBottom;
@@ -20,11 +20,11 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame refreshType:(HTRefreshType)refreshTpye {
+- (instancetype)initWithFrame:(CGRect)frame refreshType:(HTRefreshType)refreshTpye {
     return [self initWithFrame:frame style:UITableViewStylePlain refreshType:refreshTpye];
 }
 
-- (id)initWithFrame:(CGRect)frame style:(UITableViewStyle) style refreshType:(HTRefreshType)refreshType {
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle) style refreshType:(HTRefreshType)refreshType {
     self = [super initWithFrame:frame style:style];
     if (self) {
         _refreshType = refreshType;

@@ -26,7 +26,7 @@
 const CGFloat alertWidth = 270.0f;
 const CGFloat alertRadius = 13.0f;
 
-- (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle  {
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle  {
     self = [super initWithFrame:CGRectMake((kDeviceWidth - alertWidth) / 2, 0, alertWidth, 44) andRadius:alertRadius];
     if (self) {
         _readyToLoadSubviews = YES;
@@ -40,7 +40,7 @@ const CGFloat alertRadius = 13.0f;
     return self;
 }
 
-- (id)initWithCustomView:(UIView *)view title:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle {
+- (instancetype)initWithCustomView:(UIView *)view title:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle {
     self = [super initWithFrame:CGRectMake((kDeviceWidth - alertWidth) / 2, 0, alertWidth, 44) andRadius:alertRadius];
     if (self) {
         _readyToLoadSubviews = YES;

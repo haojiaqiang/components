@@ -31,7 +31,7 @@ static HTVideoPlayer *_sharedInstance = nil;
     return nil;
 }
 
-+ (id)alloc {
++ (instancetype)alloc {
     @synchronized([HTVideoPlayer class]) {
         NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
         _sharedInstance = [super alloc];

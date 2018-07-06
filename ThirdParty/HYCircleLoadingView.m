@@ -21,7 +21,7 @@
 
 @implementation HYCircleLoadingView
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -30,7 +30,7 @@
     return self;
 }
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {

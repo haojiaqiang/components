@@ -27,7 +27,7 @@ static HTDBUtilities* _sharedInstance = nil;
     return nil;
 }
 
-+ (id)alloc
++ (instancetype)alloc
 {
     @synchronized([HTDBUtilities class])
 	{

@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) BOOL isAnimating;
 
 //use this to init
-- (id)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame;
 
 - (void)startAnimation;
 - (void)stopAnimation;

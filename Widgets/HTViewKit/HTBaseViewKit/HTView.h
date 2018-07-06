@@ -21,7 +21,7 @@
 @property (nonatomic, assign) CGFloat lbRadius; // Left Bottom Radius
 @property (nonatomic, assign) CGFloat rbRadius; // Right Bottom Radius
 
-- (id)initWithFrame:(CGRect)frame andRadius:(CGFloat)radius;
+- (instancetype)initWithFrame:(CGRect)frame andRadius:(CGFloat)radius;
 
 - (void)loadSubviews;
 

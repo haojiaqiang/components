@@ -23,7 +23,7 @@
     HTSlideViewCellView *_itemView;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
@@ -72,7 +72,7 @@ static NSString *HTSlideViewCellIdentifier = @"HTSlideViewCellIdentifier";
     UIPageControl *_pageControl;
 }
 
-- (id)initWithFrame:(CGRect)frame andData:(NSArray *)dataArray {
+- (instancetype)initWithFrame:(CGRect)frame andData:(NSArray *)dataArray {
     self = [self initWithFrame:frame];
     if (self) {
         _dataArray = dataArray;

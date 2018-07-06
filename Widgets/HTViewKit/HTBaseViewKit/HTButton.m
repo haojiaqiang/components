@@ -8,7 +8,7 @@
 
 @implementation HTButton
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self initRadius:0];
@@ -18,7 +18,7 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame andRadius:(CGFloat)radius {
+- (instancetype)initWithFrame:(CGRect)frame andRadius:(CGFloat)radius {
     self = [super initWithFrame:frame];
     if (self) {
         

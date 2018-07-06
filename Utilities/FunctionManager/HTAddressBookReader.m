@@ -23,7 +23,7 @@ static HTAddressBookReader *_sharedInstance;
     return nil;
 }
 
-+ (id)alloc {
++ (instancetype)alloc {
     @synchronized([HTAddressBookReader class]) {
         NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
         _sharedInstance = [super alloc];

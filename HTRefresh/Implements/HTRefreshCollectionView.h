@@ -17,9 +17,9 @@
 @property (nonatomic, assign) HTRefreshType refreshType;
 
 // Constructors
-- (id)initWithFrame:(CGRect)frame refreshType:(HTRefreshType)refreshType;
+- (instancetype)initWithFrame:(CGRect)frame refreshType:(HTRefreshType)refreshType;
 
-- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout refreshType:(HTRefreshType)refreshType;
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout refreshType:(HTRefreshType)refreshType;
 
 @end
 

@@ -1,18 +1,16 @@
 //
 //  Created by Hayato on 2016/3/23.
-//  Copyright © 2016年 Hayato. All rights reserved.
+//  Copyright © 2018年 Hayato. All rights reserved.
 //
 
 #import "UIScrollView+HTRefresh.h"
 #import <objc/runtime.h>
 
 @interface UIScrollView ()
-
 @property (nonatomic, strong) HTRefreshView *header;
 @property (nonatomic, strong) HTRefreshView *footer;
 @property (nonatomic, copy) void (^refreshHeaderCallback)();
 @property (nonatomic, copy) void (^refreshFooterCallback)();
-
 @end
 
 static const NSString *HTRefreshHeaderKey = @"HTRefreshHeaderView";

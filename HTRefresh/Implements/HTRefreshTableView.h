@@ -17,8 +17,8 @@
 @property (nonatomic, assign) HTRefreshType refreshType;
 
 // Constructors
-- (id)initWithFrame:(CGRect)frame refreshType:(HTRefreshType)refreshTpye;
-- (id)initWithFrame:(CGRect)frame style:(UITableViewStyle) style refreshType:(HTRefreshType)refreshType;
+- (instancetype)initWithFrame:(CGRect)frame refreshType:(HTRefreshType)refreshTpye;
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle) style refreshType:(HTRefreshType)refreshType;
 
 @end
 

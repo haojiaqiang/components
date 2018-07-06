@@ -13,7 +13,7 @@ static NSTimeInterval REQUEST_TIMEOUT_INTERVAL = 30;
     BOOL _showsRetryView;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         _showsLoadingView = YES;

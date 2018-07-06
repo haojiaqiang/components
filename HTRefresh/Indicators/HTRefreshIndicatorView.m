@@ -11,7 +11,7 @@
     UIImageView *_imageView, *_wordsView;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self addShapeLayer];

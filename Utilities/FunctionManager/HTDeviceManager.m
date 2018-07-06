@@ -27,7 +27,7 @@ static HTDeviceManager *_sharedInstance = nil;
     return nil;
 }
 
-+ (id)alloc {
++ (instancetype)alloc {
     @synchronized([HTDeviceManager class]) {
         NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
         _sharedInstance = [super alloc];
