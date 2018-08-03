@@ -21,11 +21,10 @@
 
 -(UILabel *)indexTipLabel {
     if(!_indexTipLabel){
-        _indexTipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
-        _indexTipLabel.layer.masksToBounds = YES;
+        _indexTipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
         _indexTipLabel.textAlignment = NSTextAlignmentCenter;
         _indexTipLabel.textColor = [UIColor blackColor];
-        _indexTipLabel.font = [UIFont systemFontOfSize:24];
+        _indexTipLabel.font = [UIFont systemFontOfSize:28];
     }
     return _indexTipLabel;
 }
