@@ -12,28 +12,27 @@
 
 static HTContactReader *_sharedInstance;
 
-+ (HTContactReader*) sharedReader{
-    @synchronized([HTContactReader class])
-    {
-        if(!_sharedInstance)
-            _sharedInstance = [[self alloc]init];
-        return _sharedInstance;
-    }
-    return nil;
++ (instancetype)allocWithZone:(NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [super allocWithZone:zone];
+    });
+    return _sharedInstance;
 }
 
-+ (instancetype)alloc
-{
-    @synchronized([HTContactReader class])
-    {
-        NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
-        _sharedInstance = [super alloc];
-        return _sharedInstance;
-    }
-    return nil;
++ (instancetype)sharedReader {
+    return [[self alloc] init];
 }
 
-- (void) readContactsOnCompletion:(HTContactRaaderBlock)completion{
+- (instancetype)copyWithZone:(NSZone *)zone {
+    return _sharedInstance;
+}
+
+- (instancetype)mutableCopyWithZone:(NSZone *)zone {
+    return _sharedInstance;
+}
+
+- (void)readContactsOnCompletion:(HTContactRaaderBlock)completion{
     CFErrorRef error = NULL;
     ABAddressBookRef addressBook = nil;
     ABAuthorizationStatus authStatus = ABAddressBookGetAuthorizationStatus();
@@ -56,7 +55,7 @@ static HTContactReader *_sharedInstance;
     }
 }
 
-- (void) readContacts:(ABAddressBookRef) addressBook authStatus:(ABAuthorizationStatus) authStatus onCompletion:(HTContactRaaderBlock) completion {
+- (void)readContacts:(ABAddressBookRef) addressBook authStatus:(ABAuthorizationStatus) authStatus onCompletion:(HTContactRaaderBlock) completion {
     if (addressBook){
         if (authStatus == kABAuthorizationStatusAuthorized){
             NSArray *contacts = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);

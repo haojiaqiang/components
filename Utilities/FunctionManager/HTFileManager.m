@@ -9,22 +9,24 @@
 
 static HTFileManager *_sharedInstance = nil;
 
-+ (HTFileManager *)sharedManager {
-    @synchronized([HTFileManager class]) {
-        if(!_sharedInstance)
-            _sharedInstance = [[self alloc] init];
-        return _sharedInstance;
-    }
-    return nil;
++ (instancetype)allocWithZone:(NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [super allocWithZone:zone];
+    });
+    return _sharedInstance;
 }
 
-+ (instancetype)alloc {
-    @synchronized([HTFileManager class]) {
-        NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
-        _sharedInstance = [super alloc];
-        return _sharedInstance;
-    }
-    return nil;
++ (instancetype)sharedManager {
+    return [[self alloc] init];
+}
+
+- (instancetype)copyWithZone:(NSZone *)zone {
+    return _sharedInstance;
+}
+
+- (instancetype)mutableCopyWithZone:(NSZone *)zone {
+    return _sharedInstance;
 }
 
 - (NSFileManager *)fileManager {

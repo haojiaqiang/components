@@ -10,14 +10,24 @@
 
 static HTNetworkReachabilityManager *_sharedInstance;
 
-+ (HTNetworkReachabilityManager *)sharedManager {
-    @synchronized([HTNetworkReachabilityManager class]) {
-        if (!_sharedInstance) {
-            _sharedInstance = [[self alloc] init];
-        }
-        return _sharedInstance;
-    }
-    return nil;
++ (instancetype)allocWithZone:(NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [super allocWithZone:zone];
+    });
+    return _sharedInstance;
+}
+
++ (instancetype)sharedManager {
+    return [[self alloc] init];
+}
+
+- (instancetype)copyWithZone:(NSZone *)zone {
+    return _sharedInstance;
+}
+
+- (instancetype)mutableCopyWithZone:(NSZone *)zone {
+    return _sharedInstance;
 }
 
 - (void)startReachabilityMonitor:(void (^)(HTNetworkReachabilityStatus))callback {

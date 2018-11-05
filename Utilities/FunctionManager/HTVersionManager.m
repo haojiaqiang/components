@@ -11,22 +11,24 @@
 
 static HTVersionManager *_sharedInstance = nil;
 
-+ (HTVersionManager *)sharedManager {
-    @synchronized([HTVersionManager class]) {
-        if (!_sharedInstance)
-            _sharedInstance = [[self alloc] init];
-        return _sharedInstance;
-    }
-    return nil;
++ (instancetype)allocWithZone:(NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [super allocWithZone:zone];
+    });
+    return _sharedInstance;
 }
 
-+ (instancetype)alloc {
-    @synchronized([HTVersionManager class]) {
-        NSAssert(_sharedInstance == nil, @"Attempted to allocate a second instance of a singleton.");
-        _sharedInstance = [super alloc];
-        return _sharedInstance;
-    }
-    return nil;
++ (instancetype)sharedManager {
+    return [[self alloc] init];
+}
+
+- (instancetype)copyWithZone:(NSZone *)zone {
+    return _sharedInstance;
+}
+
+- (instancetype)mutableCopyWithZone:(NSZone *)zone {
+    return _sharedInstance;
 }
 
 - (BOOL)isNewVersion:(NSString *)version {
