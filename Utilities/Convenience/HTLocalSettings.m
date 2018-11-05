@@ -30,6 +30,10 @@ static HTLocalSettings *_sharedInstance = nil;
     return _sharedInstance;
 }
 
+- (id)getSettings:(NSString *)key {
+    return [self settingsForKey:key];
+}
+
 - (id)settingsForKey:(NSString *)key {
     return [[NSUserDefaults standardUserDefaults] objectForKey:key];
 }

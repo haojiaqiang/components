@@ -119,7 +119,3 @@ static char HTIndexTipManagerKey;
 }
 
 @end
-
-
-
-
